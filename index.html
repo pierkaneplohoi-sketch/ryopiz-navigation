@@ -41,21 +41,20 @@
     position: absolute;
     background: #FFFFFF;
     border-radius: 50%;
-    opacity: 0;
+    opacity: 0.85;
     animation: twinkle var(--tw, 4s) ease-in-out infinite;
-    animation-delay: var(--td, 0s);
   }
   @keyframes twinkle {
-    0%, 100% { opacity: 0.1; transform: scale(0.8); }
-    50% { opacity: 0.95; transform: scale(1.15); }
+    0% { opacity: 0.85; transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(0.7); }
+    100% { opacity: 0.85; transform: scale(1); }
   }
   .star-drift {
     position: absolute;
     background: #FFFFFF;
     border-radius: 50%;
-    opacity: 0;
+    opacity: 0.85;
     animation: twinkle var(--tw, 5s) ease-in-out infinite, drift var(--dr, 60s) linear infinite;
-    animation-delay: var(--td, 0s), var(--dd, 0s);
   }
   @keyframes drift {
     0% { transform: translate(0, 0); }
@@ -69,7 +68,7 @@
     box-shadow: 0 0 6px 2px rgba(255,255,255,0.6);
     opacity: 0;
     animation: shoot var(--sh, 1.2s) ease-out infinite;
-    animation-delay: var(--sd, 5s);
+    animation-delay: var(--sd, 0s);
   }
   .star-shoot::after {
     content: "";
@@ -289,7 +288,6 @@
         var left = Math.random() * 100;
         var top = Math.random() * 100;
         var tw = (3 + Math.random() * 5).toFixed(1);
-        var td = (Math.random() * 8).toFixed(1);
         if (i % 5 === 0) {
           s.className = "star-drift";
           s.style.width = size + "px";
@@ -297,9 +295,7 @@
           s.style.left = left + "%";
           s.style.top = top + "%";
           s.style.setProperty("--tw", tw + "s");
-          s.style.setProperty("--td", td + "s");
           s.style.setProperty("--dr", (40 + Math.random() * 60).toFixed(0) + "s");
-          s.style.setProperty("--dd", (Math.random() * 30).toFixed(0) + "s");
           var dx = (Math.random() * 8 - 4).toFixed(2);
           var dy = (Math.random() * 6 - 3).toFixed(2);
           s.style.setProperty("--dx", dx + "px");
@@ -311,7 +307,6 @@
           s.style.left = left + "%";
           s.style.top = top + "%";
           s.style.setProperty("--tw", tw + "s");
-          s.style.setProperty("--td", td + "s");
         }
         container.appendChild(s);
       }
@@ -321,7 +316,7 @@
         sh.style.left = (10 + Math.random() * 80) + "%";
         sh.style.top = (5 + Math.random() * 50) + "%";
         sh.style.setProperty("--sh", (1.1 + Math.random() * 1.4).toFixed(2) + "s");
-        sh.style.setProperty("--sd", (4 + Math.random() * 12).toFixed(1) + "s");
+        sh.style.setProperty("--sd", (0.5 + j * 2.5).toFixed(1) + "s");
         container.appendChild(sh);
       }
     })();
