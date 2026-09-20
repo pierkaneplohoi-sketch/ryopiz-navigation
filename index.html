@@ -45,7 +45,10 @@
     border-bottom: 1px solid var(--border);
   }
   .dots { display:flex; gap:6px; }
-  .dot { width:11px; height:11px; border-radius:50%; background:#3A3A3E; }
+  .dot { width:11px; height:11px; border-radius:50%; }
+  .dot-r { background:#E2453D; }
+  .dot-y { background:#F5B925; }
+  .dot-g { background:#3DBB5A; }
   .path {
     flex: 1;
     margin: 0 8px;
@@ -149,7 +152,7 @@
 <body>
   <div class="window">
     <div class="titlebar">
-      <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <div class="dots"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span></div>
       <div class="path">https://ryopiz.navigation</div>
     </div>
     <div class="search">
